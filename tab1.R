@@ -71,9 +71,9 @@ tab1 |>
 q9 =
 tab1 |>
   mutate(med_scripts = ifelse(is.na(med_scripts), "None", med_scripts)) |>
-  summarize(total_cost = sum(annual_medical_costs + annual_medical_costs),
+  summarize(total_cost = sum(annual_medical_costs + annual_pharmacy_costs),
             .by = med_scripts) |>
-  add_row(med_scripts = "Total", total_cost = 12003471)|>
+  add_row(med_scripts = "Total", total_cost = 6490347.8)|>
   arrange(total_cost)
 
 q9 |>
